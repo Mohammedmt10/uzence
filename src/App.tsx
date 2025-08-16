@@ -3,6 +3,15 @@ import InputField from "./components/ui/inputField"
 import Moon from "./icons/moon";
 import Sun from "./icons/sun";
 import DataTables from "./components/ui/dataTables";
+
+interface Column<T> {
+    key: string;
+    title: string;
+    dataIndex: keyof T;
+    sortable?: boolean;
+}
+
+
 function App() {
 
   const [darkMode , setDarkMode] = useState(false);
@@ -10,10 +19,10 @@ function App() {
   
   const data = [{ id : 1, name : "Alice", age : 30 },{ id : 2, name : "Bob", age : 25 }];
 
-  const columns = [
+  const columns: Column<{ id: number; name: string; age: number }>[] = [
     { key: 'name', title: 'Name', dataIndex: 'name' },
     { key: 'age', title: 'Age', dataIndex: 'age' }
-  ];
+  ] ;
 
   return <div className={`${mode} p-5`}>
     {!darkMode && <div className="float-end cursor-pointer" onClick={() => {
