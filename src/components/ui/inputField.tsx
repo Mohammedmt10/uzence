@@ -32,8 +32,8 @@ export default function InputField(props : InputFieldProps) {
             
             <input type={hidden ? "password" : "text"} onChange={props.onChange} value={props.value} placeholder={props.loading ? "Loading..." : props.placeholder } disabled={props.disabled} className={`${mode}${size} ${variant} px-2 p-1 text-sm rounded-sm z-[0]`} />
 
-            {hidden && <span className={`${props.darkMode ? "text-white" : ""} absolute -translate-x-4 translate-y-2 cursor-pointer z-[99]`} onClick={() => setHidden(!hidden)}><Eye /></span>}
-            {!hidden && <span className={`${props.darkMode ? "text-white" : ""} absolute -translate-x-4 translate-y-2 cursor-pointer z-[99]`} onClick={() => setHidden(!hidden)}><EyeSlash /></span>}
+            {hidden && <span className={`${props.darkMode ? "text-white" : ""} absolute -translate-x-4 translate-y-2 cursor-pointer z-[99] max-h-5 max-w-5`} onClick={() => setHidden(!hidden)}><Eye /></span>}
+            {!hidden && <span className={`${props.darkMode ? "text-white" : ""} absolute -translate-x-4 translate-y-2 cursor-pointer z-[99]  max-h-5 max-w-5`} onClick={() => setHidden(!hidden)}><EyeSlash /></span>}
 
             {props.helperText && <div className="text-xs py-2">{props.helperText}</div>} 
             
