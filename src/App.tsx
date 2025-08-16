@@ -31,7 +31,9 @@ function App() {
     {darkMode && <div className="float-end cursor-pointer" onClick={() => {
       setDarkMode(c => !c);
     }}><Sun /></div>}
-    <DataTables data={data} columns={columns} selectable />
+    <DataTables data={data} columns={columns} selectable onRowSelect={(selected) => {
+      console.log(selected)
+    }}/>
     <InputField label="Name" placeholder="John" size="md" />
   </div>
 }

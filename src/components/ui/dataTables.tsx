@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface DataTableProps<T> {
     data: T[];
@@ -19,6 +19,11 @@ interface Column<T> {
 export default function DataTables<T>(props : DataTableProps<T>) {
     const [selectedRows, setSelectedRows] = useState<T[]>([]);
     
+    useEffect(() => {
+        if (props.onRowSelect) {
+        props.onRowSelect(selectedRows);
+        }
+    }, [selectedRows, props.onRowSelect]);
 
     const checkHandler = (row : T) => {
         const exists = selectedRows.includes(row);
