@@ -1,0 +1,1 @@
+import DataTables from "../components/ui/dataTables";
