@@ -18,6 +18,7 @@ export const Basic = () => {
       helperText="Your password must be strong."
       variant="outlined"
       size="md"
+      setValue={setValue}
     />
   );
 };
@@ -35,7 +36,8 @@ export const WithDarkMode = () => {
         helperText="Insert your password above"
         variant="outlined"
         size="md"
-        darkMode={false}
+        darkMode
+        setValue={setValue}
       />
     </div>
   );
@@ -54,6 +56,7 @@ export const WithError = () => {
       errorMessage="Password is too weak"
       variant="outlined"
       size="md"
+      setValue={setValue}
     />
   );
 };

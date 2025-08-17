@@ -3,6 +3,8 @@ import InputField from "./components/ui/inputField"
 import Moon from "./icons/moon";
 import Sun from "./icons/sun";
 import DataTables from "./components/ui/dataTables";
+import "./App.css";
+import "./tailwind.css"
 
 interface Column<T> {
     key: string;
